@@ -21,12 +21,24 @@ class mannualCar: public car{
         }
 };
 
+class AutomaticCar: public car{
+    public: 
+        void start(){
+            cout<<"automatic car is starting"<<endl;
+        }
+};
+
 int main(){
     //car* mycar= new mannualCar();  with this printName() is not working because base class car is not having this function
     mannualCar* mycar= new mannualCar();
     mycar->start();
     mycar->noise();
     mycar->printName();
+
+    car* autocar=new AutomaticCar();
+    autocar->start();
+
     delete mycar;
+    delete autocar;
     return 0;
 }
