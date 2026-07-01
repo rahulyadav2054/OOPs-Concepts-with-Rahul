@@ -10,10 +10,17 @@ class car{
         void airbags(){                      //default method
             cout<<"car has airbags"<<endl;
         }
+
+        static void typeOfVehicle(){
+            cout<<"this is car"<<endl;
+        }
 };
 
 class mannualCar: public car{
     public:
+        /*mannualCar(){
+            car::typeOfVehicle();
+        }*/
         void start(){
             cout<<"mannual car is started"<<endl;
         }
@@ -24,6 +31,7 @@ class mannualCar: public car{
 };
 
 int main(){
+    car::typeOfVehicle();
     car* mycar = new mannualCar();
     mycar->start();
     mycar->numberOfGears();
